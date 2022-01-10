@@ -1,0 +1,26 @@
+server:
+  port: 9999
+
+logging:
+  level:
+    ROOT: DEBUG
+    com.mycompany.shopping: DEBUG
+
+security:
+  authentication:
+    jwt:
+      base64-secret: YTM2OWMzN2EwZTQzYjQ5YTdlMDA5YTcxZDUzZjY0MGQ1YmFmYTQyZWFhMWIwNDNiOGYwYjQ0MTkxNGM5OTQzMzlmODBlOGU2YTE1MDFiMWNjYjQwY2VhODUwMzEyMWQyM2I2MzkzMmI2ZWU5YWJmYTMwMWUyYzQ4ZWM2Y2FhZmU
+      token-validity-in-seconds: 86400
+      token-validity-in-seconds-for-remember-me: 2592000
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: system
+    password: oracle
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.Oracle10gDialect

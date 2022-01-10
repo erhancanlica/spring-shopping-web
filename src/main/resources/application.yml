@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: spring_shopping
+
+  profiles:
+    active:
+    group:
+      dev:
+        - dev
+        - api-docs
+
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: system
+    password: oracle
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+  jpa:
+    hibernate:
+     ddl-auto: update
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+server:
+  port: 9999
+  servlet:
+    session:
+      cookie:
+        http-only: true
+

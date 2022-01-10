@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  oracle:
+    image: truevoly/oracle-12c
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_PWD: 1234
+    volumes:
+      - ./oradata:/opt/oracle/oradata
