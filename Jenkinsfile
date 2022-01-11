@@ -1,23 +1,26 @@
 pipeline {
     agent any
-    tools {
-        jdk 'jdk'
-        maven '3.8.4'
-       
-    }
     stages {
-        stage("build project") {
+        stage('git repo & clean') {
             steps {
-                https://github.com/erhancnlc/shopping_web_be.git
-                echo "Java VERSION"
-                sh 'java -version'
-                echo "Maven VERSION"
-                sh 'mvn -version'
-                echo 'building project...'
-                sh "mvn compile"
-                sh "mvn package"
-                //sh "mvn test"
-                sh "mvn clean install"
+               bat "rmdir  /s /q TicketBookingServiceJunitTesting"
+                bat "git clone https://github.com/kishancs2020/TicketBookingServiceJunitTesting.git"
+                bat "mvn clean -f TicketBookingServiceJunitTesting"
+            }
+        }
+        stage('install') {
+            steps {
+                bat "mvn install -f TicketBookingServiceJunitTesting"
+            }
+        }
+        stage('test') {
+            steps {
+                bat "mvn test -f TicketBookingServiceJunitTesting"
+            }
+        }
+        stage('package') {
+            steps {
+                bat "mvn package -f TicketBookingServiceJunitTesting"
             }
         }
     }
