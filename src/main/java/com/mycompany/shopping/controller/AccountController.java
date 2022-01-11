@@ -43,6 +43,7 @@ public class AccountController {
 
     @GetMapping("/account")
     public AdminUserDto getAccount() {
+        // test 
         return userService
                 .getUserWithAuthorities()
                 .map(AdminUserDto::new)
