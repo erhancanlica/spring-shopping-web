@@ -19,6 +19,8 @@
     <properties>
         <java.version>11</java.version>
         <spring-boot.version>2.6.1</spring-boot.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <oracle.jdbc.version>21.4.0.0</oracle.jdbc.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
         <io.jsonwebtoken>0.11.2</io.jsonwebtoken>
