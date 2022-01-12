@@ -13,7 +13,7 @@ spring:
     url: jdbc:oracle:thin:@localhost:1521:xe
     username: system
     password: oracle
-    driver-class-name: oracle.jdbc.driver.OracleDriver
+    driver-class-name: oracle.jdbc.OracleDriver
 
   jpa:
     hibernate:
@@ -25,7 +25,7 @@ spring:
       matching-strategy: ant_path_matcher
 
 server:
-  port: 9999
+  port: 8088
   servlet:
     session:
       cookie:
